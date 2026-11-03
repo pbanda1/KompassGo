@@ -1,0 +1,33 @@
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+### Eclipse / VS Code / NetBeans ###
+.classpath
+.project
+.settings/
+.vscode/
+/nbproject/private/
+
+### H2 baza (lokalna, svatko ima svoju) ###
+data/
+*.mv.db
+*.trace.db
+*.lock.db
+
+### Logovi ###
+*.log
+logs/
+
+### Operacijski sustav ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
