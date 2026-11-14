@@ -16,17 +16,17 @@ out/
 .vscode/
 /nbproject/private/
 
-### H2 baza (lokalna, svatko ima svoju) ###
-data/
+### H2 database (lokalna, everyone has their own) ###
+/data/
 *.mv.db
 *.trace.db
 *.lock.db
 
-### Logovi ###
+### Logs ###
 *.log
 logs/
 
-### Operacijski sustav ###
+### OS ###
 .DS_Store
 Thumbs.db
 desktop.ini
