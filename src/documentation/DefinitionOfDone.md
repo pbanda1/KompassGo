@@ -1,31 +1,15 @@
-# Definition of Done (DoD)
+Applies to every user story. A story is Done only when all 7 criteria are met. A spike is done when its question is answered and documented in Jira or Confluence.
 
-A user story is Done only when all of the following are true:
+Works on every team member's computer: a fresh git clone of main, set up only by following the README, starts the app and the main scenario works.
 
-## Code
-- [ ] All acceptance criteria are met.
-- [ ] No passwords, keys or other secrets are in the repository.
-- [ ] The code follows the agreed package structure (`model/entity`, `model/enums`,
-  `util`, `exception`, `poco`, ...).
+All acceptance criteria of the story are met.
 
-## Tests and build
-- [ ] New logic is covered by tests where it makes sense (JUnit 5, `src/test/java`).
-- [ ] `./mvnw verify` (Windows: `.\mvnw.cmd verify`) passes locally: **BUILD SUCCESS**,
-  0 failures, 0 errors.
-- [ ] The CI pipeline on the pull request is green.
-- [ ] The application starts on everyone's local machine and the feature has been tried by hand "by everyone in the team".
+./mvnw verify (Windows: .\mvnw.cmd verify) is green locally and in CI: BUILD SUCCESS, all tests pass.
 
-## Git and review
-- [ ] Work was done on a `feature/SCRUM-xx-short-name` branch, never directly on `main`.
-- [ ] Every commit message starts with the Jira key (e.g. `SCRUM-37 ...`).
-- [ ] A pull request into `main` was opened and approved by **at least 1** other team member.
-- [ ] The pull request is merged and the feature branch is deleted.
+The work was done on a feature/SCRUM-xx-... branch, every commit message starts with the Jira key, and the pull request was approved by at least 1 other member before merging into main.
 
-## Database
-- [ ] Schema changes are in `initDB.sql`, and `resetDB.sql` / `seedDB.sql` are updated to match.
-- [ ] The database generates all IDs (`GENERATED ALWAYS AS IDENTITY`); no IDs are inserted by hand.
+The repository contains no passwords or other secrets and no absolute paths; code, comments and database objects are in English.
 
-## Documentation and Jira
-- [ ] README / documentation is updated if setup or usage changed.
-- [ ] All subtasks are in **Done** and the story is moved to **Done** in Jira.
-- [ ] The Product Owner has accepted the story (in the sprint review at the latest).
+Database changes are only in the SQL scripts (initDB / seedDB / resetDB), the database generates all IDs and no manual steps in the database are needed.
+
+README / documentation is updated, and the story and all its subtasks are in Done in Jira.
