@@ -1,4 +1,4 @@
-package hr.algebra.kompassgo.model;
+package hr.algebra.kompassgo.model.entity;
 
 import hr.algebra.kompassgo.model.enums.Priority;
 

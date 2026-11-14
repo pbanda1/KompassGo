@@ -26,7 +26,7 @@ public class App extends Application {
         config.setWidth((int) screen.getWidth());
         config.setHeight((int) screen.getHeight());
 
-        // kad bude gotov login ekran, StackPane zamijeniti s:
+        // change stack pane with:
         // Parent root = new FXMLLoader(App.class.getResource("view/login-view.fxml")).load();
         StackPane root = new StackPane();
         Scene scene = new Scene(root, config.getWidth(), config.getHeight());
