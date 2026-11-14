@@ -1,7 +1,7 @@
 # Module Development Workflow
 
 Every module (epic) is built in the same order, **story by story**.
-A story is done only when all steps are completed and all acceptance criteria are met
+A story is done  only when all steps are completed and all acceptance criteria are met
 (see [Definition of Done](DefinitionOfDone.md)).
 
 ## Technology
