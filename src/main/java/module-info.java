@@ -4,7 +4,8 @@ module hr.algebra.kompassgo {
     requires java.sql;
     requires com.h2database;
     requires jbcrypt;
-
+    requires java.xml;
+    requires org.slf4j;
     opens hr.algebra.kompassgo to javafx.fxml;
     exports hr.algebra.kompassgo;
 }
