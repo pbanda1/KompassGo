@@ -1,15 +1,13 @@
 package hr.algebra.kompassgo.model.entity;
-
 import hr.algebra.kompassgo.model.enums.Role;
 import hr.algebra.kompassgo.model.enums.TravelMode;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 
-public class User {
+public class User extends BaseEntity {
 
-    private int id;
+
     private String firstName;
     private String lastName;
     private String email;
@@ -52,29 +50,61 @@ public class User {
         return firstName + " " + lastName;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getFirstName() {
+        return firstName;
+    }
 
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public String getLastName() {
+        return lastName;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public String getPasswordHash() { return passwordHash; }
-    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    public String getEmail() {
+        return email;
+    }
 
-    public Role getRole() { return role; }
-    public void setRole(Role role) { this.role = role; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public TravelMode getTravelMode() { return travelMode; }
-    public void setTravelMode(TravelMode travelMode) { this.travelMode = travelMode; }
+    public String getPasswordHash() {
+        return passwordHash;
+    }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public TravelMode getTravelMode() {
+        return travelMode;
+    }
+
+    public void setTravelMode(TravelMode travelMode) {
+        this.travelMode = travelMode;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
     // two users are equal if they have the same e-mail (UNIQUE in the database)
     @Override

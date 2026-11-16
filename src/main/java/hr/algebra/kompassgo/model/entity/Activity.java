@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 
-public class Activity {
+public class Activity extends BaseEntity{
 
-    private int id;
+
     private int userId;
     private Integer locationId;     // may be null (activity without a location)
     private String name;
@@ -58,9 +58,6 @@ public class Activity {
     public LocalDateTime getEndTime() {
         return startTime == null ? null : startTime.plusMinutes(durationMin);
     }
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
     public int getUserId() { return userId; }
     public void setUserId(int userId) { this.userId = userId; }
