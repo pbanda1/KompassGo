@@ -3,9 +3,9 @@ package hr.algebra.kompassgo.model.entity;
 import java.util.Objects;
 
 
-public class Location {
+public class Location extends BaseEntity {
 
-    private int id;
+
     private int userId;
     private String name;
     private String address;
@@ -28,8 +28,7 @@ public class Location {
         this.address = address;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+
 
     public int getUserId() { return userId; }
     public void setUserId(int userId) { this.userId = userId; }
