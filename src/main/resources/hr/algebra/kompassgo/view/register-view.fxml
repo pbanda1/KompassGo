@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    M1-01 Registracija  (SCRUM-9)
+
+    Layout follows the lo-fi wireframe: BorderPane root, "Nav / Header" on top,
+    "Sadrzaj" in the centre. All styling lives in styles.css.
+
+    The header carries no navigation items here: the user is not signed in yet.
+
+    Still to be added by hand:
+      - onAction handlers for registerButton / loginLink
+      - validation messages into the *ErrorLabel nodes below (SCRUM-10)
+      - saving the user through UserRepository (SCRUM-11)
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hr.algebra.kompassgo.controller.RegisterController"
+            stylesheets="@styles.css"
+            prefWidth="1280.0" prefHeight="800.0">
+
+    <!-- ============================ Nav / Header ============================ -->
+    <top>
+        <HBox styleClass="nav-header" alignment="CENTER_LEFT">
+            <children>
+                <Label text="KompassGo" styleClass="nav-brand"/>
+                <Region HBox.hgrow="ALWAYS"/>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- ============================== Sadrzaj =============================== -->
+    <center>
+        <VBox styleClass="content" spacing="20.0">
+            <children>
+
+                <!-- Naslov i akcije -->
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label text="Registracija" styleClass="screen-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </children>
+                </HBox>
+
+                <!-- Stupac: form, fixed width 420 as in the wireframe -->
+                <VBox spacing="16.0" prefWidth="420.0" maxWidth="420.0">
+                    <children>
+
+                        <!-- Polje / Ime
+                             The wireframe has a single "Ime i prezime" field, but AppUser
+                             stores FirstName and LastName separately and both are NOT NULL,
+                             so the form collects them as two fields. -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Ime" styleClass="field-label"/>
+                                <TextField fx:id="firstNameField" promptText="Unesite ime"/>
+                                <Label fx:id="firstNameErrorLabel" styleClass="error-label"
+                                       visible="false" managed="false" wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Polje / Prezime -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Prezime" styleClass="field-label"/>
+                                <TextField fx:id="lastNameField" promptText="Unesite prezime"/>
+                                <Label fx:id="lastNameErrorLabel" styleClass="error-label"
+                                       visible="false" managed="false" wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Polje / E-mail -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="E-mail" styleClass="field-label"/>
+                                <TextField fx:id="emailField" promptText="ime.prezime@algebra.hr"/>
+                                <Label fx:id="emailErrorLabel" styleClass="error-label"
+                                       visible="false" managed="false" wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Polje / Lozinka -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Lozinka" styleClass="field-label"/>
+                                <PasswordField fx:id="passwordField" promptText="Najmanje 8 znakova"/>
+                                <Label fx:id="passwordErrorLabel" styleClass="error-label"
+                                       visible="false" managed="false" wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Polje / Ponovite lozinku -->
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label text="Ponovite lozinku" styleClass="field-label"/>
+                                <PasswordField fx:id="repeatPasswordField"/>
+                                <Label fx:id="repeatPasswordErrorLabel" styleClass="error-label"
+                                       visible="false" managed="false" wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <!-- Akcije -->
+                        <HBox spacing="16.0" alignment="CENTER_LEFT">
+                            <children>
+                                <Button fx:id="registerButton" text="Registriraj se" styleClass="button-primary"/>
+                                <Hyperlink fx:id="loginLink" text="Već imate račun? Prijava"
+                                           styleClass="link-inline"/>
+                            </children>
+                        </HBox>
+
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>
