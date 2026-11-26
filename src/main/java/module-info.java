@@ -8,6 +8,7 @@ module hr.algebra.kompassgo {
     requires org.slf4j;
     requires javafx.graphics;
     opens hr.algebra.kompassgo to javafx.fxml;
+    opens hr.algebra.kompassgo.controller to javafx.fxml;
     opens hr.algebra.kompassgo.model.entity to javafx.base;
     exports hr.algebra.kompassgo;
 }
