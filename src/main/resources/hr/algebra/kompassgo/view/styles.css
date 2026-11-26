@@ -1,0 +1,289 @@
+/*
+ * KompassGo - shared stylesheet for all FXML screens.
+ *
+ * Values come from the lo-fi wireframe (Figma, page "1 - Lo-fi wireframe").
+ * Screens must not define inline styles; use the classes below instead.
+ *
+ * Type scale: H1 24 Semi Bold | H2 18 Semi Bold | Body 14 | Caption 12
+ * Palette:    Primary #2D5BE3 | Text #1C1E21 | Muted #6B7280
+ *             Border  #D7DBE0 | Surface #F6F7F9
+ */
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+.root {
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1C1E21;
+}
+
+.label {
+    -fx-text-fill: #1C1E21;
+}
+
+/* ------------------------------------------------------------------ */
+/* Nav / Header                                                        */
+/* ------------------------------------------------------------------ */
+
+.nav-header {
+    -fx-padding: 16 32 16 32;
+    -fx-border-color: transparent transparent #D7DBE0 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: #FFFFFF;
+}
+
+.nav-brand {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1C1E21;
+}
+
+.nav-item {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6B7280;
+    -fx-cursor: hand;
+}
+
+/* the screen the user is currently on */
+.nav-item-active {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1C1E21;
+    -fx-cursor: hand;
+}
+
+/* ------------------------------------------------------------------ */
+/* Content                                                             */
+/* ------------------------------------------------------------------ */
+
+.content {
+    -fx-padding: 24 32 24 32;
+    -fx-background-color: #FFFFFF;
+}
+
+.screen-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1C1E21;
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1C1E21;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+.caption {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6B7280;
+}
+
+/* "Lokacija nije na popisu? Dodaj novu lokaciju" and similar inline links */
+.link-inline {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6B7280;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.link-inline:hover {
+    -fx-text-fill: #2D5BE3;
+    -fx-underline: true;
+}
+
+/* shown only when validation fails; keep managed="false" until then */
+.error-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #C0392B;
+}
+
+/* ------------------------------------------------------------------ */
+/* Inputs                                                              */
+/* ------------------------------------------------------------------ */
+
+.text-field,
+.password-field,
+.text-area,
+.combo-box,
+.date-picker,
+.spinner {
+    -fx-font-size: 14px;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 4;
+    -fx-border-color: #D7DBE0;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-padding: 10 12 10 12;
+    -fx-prompt-text-fill: #6B7280;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.date-picker:focused,
+.spinner:focused {
+    -fx-border-color: #2D5BE3;
+}
+
+.combo-box .list-cell {
+    -fx-padding: 0;
+    -fx-text-fill: #1C1E21;
+    -fx-background-color: transparent;
+}
+
+.check-box,
+.radio-button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1C1E21;
+}
+
+/* ------------------------------------------------------------------ */
+/* Buttons                                                             */
+/* ------------------------------------------------------------------ */
+
+/* the single main action of a screen */
+.button-primary {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #3C4046;
+    -fx-background-radius: 6;
+    -fx-border-color: #D7DBE0;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-padding: 12 20 12 20;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #2E3238;
+}
+
+.button-primary:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* every other action */
+.button-secondary {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1C1E21;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 6;
+    -fx-border-color: #D7DBE0;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-padding: 12 20 12 20;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #F6F7F9;
+}
+
+.button-secondary:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* ------------------------------------------------------------------ */
+/* Table                                                               */
+/* ------------------------------------------------------------------ */
+
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D7DBE0;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color: #F6F7F9;
+    -fx-border-color: transparent transparent #D7DBE0 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-size: 40;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+    -fx-alignment: center-left;
+}
+
+.table-view .table-cell {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1C1E21;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: transparent transparent #D7DBE0 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #F6F7F9;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #1C1E21;
+}
+
+/* ------------------------------------------------------------------ */
+/* Dialog                                                              */
+/* ------------------------------------------------------------------ */
+
+.dialog-pane {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 24;
+}
+
+.dialog-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1C1E21;
+}
+
+.dialog-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1C1E21;
+}
+
+/* ------------------------------------------------------------------ */
+/* Weekly grid (M3-02, M4-01, M4-03, M4-04)                            */
+/* ------------------------------------------------------------------ */
+
+.week-grid {
+    -fx-border-color: #D7DBE0;
+    -fx-border-width: 1;
+    -fx-background-color: #FFFFFF;
+}
+
+.week-grid-header {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+    -fx-background-color: #F6F7F9;
+    -fx-padding: 8;
+    -fx-alignment: center;
+}
+
+.week-grid-block {
+    -fx-font-size: 12px;
+    -fx-text-fill: #1C1E21;
+    -fx-background-color: #F6F7F9;
+    -fx-background-radius: 4;
+    -fx-border-color: #D7DBE0;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-padding: 6;
+}
